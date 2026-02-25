@@ -1,6 +1,7 @@
 package com.fiap.minha_primeira_api.DTO;
 
-import com.fiap.minha_primeira_api.model.Usuario;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.RepresentationModel;
 import org.springframework.hateoas.server.core.Relation;
 
 /*
@@ -16,14 +17,28 @@ public class UsuarioResponseDTO extends RepresentationModel<UsuarioResponseDTO> 
     private String email;
     private int idade;
 
-    public UsuarioResponseDTO() {
-    }
-
     public UsuarioResponseDTO(Long id, String nome, String email, int idade) {
+        super();
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.idade = idade;
+    }
+
+    public UsuarioResponseDTO() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public UsuarioResponseDTO(Iterable<Link> initialLinks) {
+        super(initialLinks);
+        // TODO Auto-generated constructor stub
+    }
+
+
+    public UsuarioResponseDTO(Link initialLink) {
+        super(initialLink);
+        // TODO Auto-generated constructor stub
     }
 
     public Long getId() {
