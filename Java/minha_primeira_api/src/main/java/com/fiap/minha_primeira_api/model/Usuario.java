@@ -4,21 +4,35 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data // Cria @getters @setters @ToString @EqualsAndHashCode
-@NoArgsConstructor // Cria um construtor sem argumentos
-@AllArgsConstructor // Cria um construtor com todos os argumentos
-
 /*
- * Classe que representa um Usuário no nosso sistema
+ * Classe que representa um Usuario no nosso sistema
  * Usamos o Lombok para reduzir código repetitivo
  */
 
+@Data //Cria @getters @setters @ToString @EqualsAndHashCode
+@NoArgsConstructor //Cria um construtor sem argumentos
+@AllArgsConstructor //Cria um construtor com todos os argumentos
 public class Usuario {
-    // Atributos do usuário
+
+    //Atributos do usuário
     private Long id;
     private String nome;
     private String email;
     private int idade;
+
+
+    public Usuario() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public Usuario(Long id, String nome, String email, int idade) {
+        super();
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.idade = idade;
+    }
 
     public Long getId() {
         return id;
